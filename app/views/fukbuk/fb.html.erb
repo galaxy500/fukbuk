@@ -1,0 +1,25 @@
+ <form id="feeder" action="demo_form.asp">
+  Message: <input type="text" name="fname"><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<script>
+$.get("https://graph.facebook.com/me/feed?access_token=CAACEdEose0cBAH30MyEM1hJ2eVZB7PmEWuq6KSdiojuUx6jwmJZBjreTzylhs0eQi60jKfx51ys3ZBdrAbUf6Xk83SX5lL3gvwOXykavHlMGRfQDJbdphHowFwyZBLpHkxfZA9GDjYuTTZCNZC5HIX7BkpCLeSIIUfDTEKr73RxhrUWVXCLbWLr5QimGk00T0DZCk1e5qbVzutBVx3oflGLZB",function(data){
+	console.log("Response Get Data " + data);
+})
+</script>
+
+<script type="text/javascript">
+$('#feeder').on('submit',function(e){
+	e.preventDefault();
+	msg = $(this).serialize();
+	console.log("Data msg " + msg);
+	$.post("https://graph.facebook.com/10207184400386452/feed", { 
+	  access_token: "CAACEdEose0cBAH30MyEM1hJ2eVZB7PmEWuq6KSdiojuUx6jwmJZBjreTzylhs0eQi60jKfx51ys3ZBdrAbUf6Xk83SX5lL3gvwOXykavHlMGRfQDJbdphHowFwyZBLpHkxfZA9GDjYuTTZCNZC5HIX7BkpCLeSIIUfDTEKr73RxhrUWVXCLbWLr5QimGk00T0DZCk1e5qbVzutBVx3oflGLZB", 
+	  message: "Hello, Arjun. I like this new API."
+	},function(resp){
+		console.log("Response" + resp);
+	});	
+});
+
+</script>
