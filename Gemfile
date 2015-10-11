@@ -43,5 +43,11 @@ group :development, :test do
   gem 'spring'
 
   gem "mandrill_mailer"
+
+  gem 'sqlite3'
+
 end
 
+group :production do
+  gem 'pg'
+end
